@@ -4,7 +4,7 @@
     .module('BeerApp')
     .config(config);
 
-    function config($stateProvider, $urlRouterProvider, $locationProvider){
+    function config($stateProvider, $urlRouterProvider){
       $stateProvider
         .state('welcome', {
           url: '/',
@@ -20,6 +20,14 @@
           templateUrl: 'home.html',
           controller: 'BeersController',
           controllerAs: 'beers'
+        })
+
+        .state('login', {
+          url: '/login',
+          title: 'Login',
+          templateUrl: 'login.html',
+          controller: 'UsersController',
+          controllerAs: 'users'
         });
 
         $urlRouterProvider.otherwise('/');
@@ -32,7 +40,6 @@
       }
 
       $rootScope.$on('$stateChangeSuccess', changeRoute);
-
     }
 
 })();
