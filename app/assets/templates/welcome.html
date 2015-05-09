@@ -1,0 +1,41 @@
+<div class="site-wrapper">
+
+      <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+
+          <div class="masthead clearfix">
+            <div class="inner">
+              <h3 class="masthead-brand"><a ui-sref="welcome" class="home">Beer.Me</a></h3>
+              <nav>
+                <ul class="nav masthead-nav">
+                  <li class="active"><a href="#">Home</a></li>
+                  <li><a ui-sref="login" class="home">Login</a>
+                </ul>
+              </nav>
+            </div>
+          </div>
+
+
+          <div class="inner cover">
+            <h1 class="cover-heading"><i class="fa fa-beer"></i> Beer.me</h1>
+            <p class="lead">Our mission is to never let a bar go dry. Join the movement today</p>
+            <p class="lead">
+              <a data-toggle="modal" data-target="#signup" class="btn btn-lg btn-primary">Sign up</a>
+            </p>
+          </div>
+
+          <%= render 'shared/signup' %>
+
+          <div class="mastfoot">
+            <div class="inner">
+              <a href="https://github.com/syang019" class="home">Made with <i class="glyphicon glyphicon-heart"></i> by Stanley Yang</a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+

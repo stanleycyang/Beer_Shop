@@ -20,7 +20,7 @@
           templateUrl: 'home.html',
           controller: 'BeersController',
           controllerAs: 'beers'
-        })
+        });
 
         $urlRouterProvider.otherwise('/');
 
