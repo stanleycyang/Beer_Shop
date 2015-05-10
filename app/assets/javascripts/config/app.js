@@ -4,7 +4,8 @@
     .module('BeerApp', [
       'ngAnimate',
       'ui.router',
-      'templates'
+      'templates',
+      'ngKookies'
     ]);
 
 })();
