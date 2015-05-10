@@ -11,6 +11,7 @@
       var self = this;
 
       self.signup = function(){
+        // Creates user
         $http.post('/api/v1/users', {
           user: {
             name: self.name,
@@ -18,9 +19,11 @@
             password: self.password
           }
         }).success(function(data, status){
-          console.log(data);
+          // Create a variable
+          self.createdUser = true;
         }).error(function(data, status){
-          console.log(data);
+          // Set the variable to false
+          self.createdUser = false;
         });
       };
     }

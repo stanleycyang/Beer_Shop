@@ -1,5 +1,12 @@
 <form name="registerForm" ng-submit="users.signup()" novalidate>
 
+  <div class="alert alert-success" role="alert" ng-show="users.createdUser === true">
+    Your account has been successfully created!
+  </div>
+  <div class="alert alert-danger" role="alert" ng-show="users.createdUser === false">
+    Your account was not created. Try again.
+  </div>
+
   <!--Name field-->
   <div class="input-group">
     <span class="input-group-addon">
