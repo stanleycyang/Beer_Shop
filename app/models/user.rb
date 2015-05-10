@@ -17,6 +17,6 @@ class User < ActiveRecord::Base
     end
 
     def create_api_key
-      self.api_key = ApiKey.create
+      self.api_key = APIKey.create
     end
 end
