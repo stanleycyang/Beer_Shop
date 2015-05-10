@@ -2,7 +2,8 @@
 
   angular
     .module('BeerApp')
-    .config(config);
+    .config(config)
+    .run(run);
 
     function config($stateProvider, $urlRouterProvider){
       $stateProvider
@@ -20,6 +21,14 @@
           templateUrl: 'home.html',
           controller: 'BeersController',
           controllerAs: 'beers'
+        })
+
+        .state('signup', {
+          url: '/signup',
+          title: 'Sign up',
+          templateUrl: 'signup-page.html',
+          controller: 'UsersController',
+          controllerAs: 'users'
         })
 
         .state('login', {
