@@ -24,6 +24,7 @@ Add gems and **take out** `turbolinks` and `jbuilder`
 	gem 'autoprefixer-rails'
 	gem 'bcrypt', '~> 3.1.7'
 	gem 'bootstrap-sass'
+	gem 'responders', '~>2.0'
 	
 	# Bower
 	gem 'bower-rails'

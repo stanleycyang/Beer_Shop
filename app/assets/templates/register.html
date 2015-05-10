@@ -1,22 +1,46 @@
-<form name="register-form">
+{{users}}
+
+<form name="registerForm" ng-submit="users.signup()" novalidate>
+
+  <!--Name field-->
   <div class="input-group">
     <span class="input-group-addon">
       <i class="glyphicon glyphicon-user"></i>
     </span>
-    <input type="text" name="name" class="form-control" placeholder="Full name" autofocus="true" />
+    <input type="text" name="name" ng-model="users.name" class="form-control" placeholder="Full name" autofocus="true" required />
+
   </div>
+
+  <div class="alert alert-danger" role="alert" ng-show="registerForm.name.$invalid && !registerForm.name.$pristine" autocomplete="off">
+    The name is invalid
+  </div>
+
+  <!--Email field-->
   <div class="input-group">
     <span class="input-group-addon">
       <i class="glyphicon glyphicon-envelope"></i>
     </span>
-    <input type="email" name="email" class="form-control" placeholder="Email"/>
+    <input type="text" name="email" ng-model="users.email" ng-pattern="/\b\w+@\w+\.\w+/" autocomplete="off" class="form-control" placeholder="Email" required />
   </div>
+
+  <div class="alert alert-danger" role="alert" ng-show="registerForm.email.$invalid && !registerForm.email.$pristine">
+    The email is invalid
+  </div>
+
+  <!--Password field-->
   <div class="input-group">
     <span class="input-group-addon">
       <i class="glyphicon glyphicon-asterisk"></i>
     </span>
-    <input type="password" name="password" class="form-control" placeholder="Password" />
+    <input type="password" ng-model="users.password" name="password" class="form-control" placeholder="Password" autocomplete="off"  required />
   </div>
-  <button class="form-control btn-success">Create my account</button>
+
+  <div class="alert alert-danger" role="alert" ng-show="registerForm.password.$invalid && !registerForm.password.$pristine">
+    The password is invalid
+  </div>
+
+  <!--Submit button-->
+  <button type="submit" ng-disabled="registerForm.$invalid" class="form-control btn-success">Create my account</button>
+
 </form>
 
