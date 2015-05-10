@@ -6,22 +6,34 @@
       <a ui-sref="welcome" class="normal">
         <h3><i class="fa fa-beer"></i>Beer.Me</h3>
       </a>
-      <form name="login-form">
+      <form name="loginForm" ng-submit="auth.login()" novalidate>
+
+        <div class="alert alert-danger" role="alert" ng-show="loginForm.email.$invalid && !loginForm.email.$pristine">
+          Email is invalid
+        </div>
+
+        <!--Email-->
         <div class="input-group">
           <span class="input-group-addon" id="basic-addon1">
           <i class="glyphicon glyphicon-envelope"></i></span>
-          <input type="email" name="email" placeholder="Email" class="form-control" autofocus="true" />
+          <input type="email" ng-model="auth.email" name="email" placeholder="Email" class="form-control" autofocus="true" ng-pattern="/\b\w+@\w+\.\w+/" required />
         </div>
 
+        <div class="alert alert-danger" role="alert" ng-show="loginForm.password.$invalid && !loginForm.password.$pristine">
+          Password is invalid
+        </div>
+
+        <!--Password-->
         <div class="input-group">
           <span class="input-group-addon" id="basic-addon2">
             <i class="fa fa-lock fa-lg"></i>
           </span>
-          <input type="password" name="password" placeholder="Password" class="form-control" />
+          <input type="password" name="password" ng-model="auth.password" placeholder="Password" class="form-control" required />
         </div>
 
+        <!--Login-->
+        <button type="submit" class="btn btn-success form-control" ng-disabled="loginForm.$invalid">Log in</button>
       </form>
-        <button class="btn btn-success form-control">Log in</button>
 
       <br />
       <br />

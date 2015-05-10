@@ -35,8 +35,8 @@
           url: '/login',
           title: 'Login',
           templateUrl: 'login.html',
-          controller: 'UsersController',
-          controllerAs: 'users'
+          controller: 'AuthenticationController',
+          controllerAs: 'auth'
         });
 
         $urlRouterProvider.otherwise('/');

@@ -11,6 +11,10 @@ class User < ActiveRecord::Base
   has_secure_password
   validates :password, length: {minimum: 6}
 
+  def self.find_by_access_token(access_token)
+    APIKey.find_by(access_token: access_token).user
+  end
+
   private
     def downcase_email
       self.email.downcase!

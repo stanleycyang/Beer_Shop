@@ -4,9 +4,9 @@
     .module('BeerApp')
     .controller('UsersController', UsersController);
 
-    UsersController.$inject = ['$http'];
+    UsersController.$inject = ['$http', '$state'];
 
-    function UsersController($http){
+    function UsersController($http, $state){
       // Capture variable
       var self = this;
 
@@ -21,6 +21,13 @@
         }).success(function(data, status){
           // Create a variable
           self.createdUser = true;
+
+          $('#signup').modal('hide');
+          // hide modal
+          $('#signup').on('hidden.bs.modal', function () {
+            $state.go('login');
+          });
+
         }).error(function(data, status){
           // Set the variable to false
           self.createdUser = false;
