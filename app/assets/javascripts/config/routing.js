@@ -18,6 +18,8 @@
         .state('home', {
           url: '/home',
           templateUrl: 'home.html',
+          controller: 'BeersController',
+          controllerAs: 'beers',
           abstract: true
         })
 
@@ -35,7 +37,9 @@
           title: 'Beer.Me',
           views:{
             'homeContent': {
-              templateUrl: 'beers.html'
+              templateUrl: 'beers.html',
+              controller: 'BeersController',
+              controllerAs: 'beers'
             }
           }
         })

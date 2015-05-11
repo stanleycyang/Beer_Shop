@@ -15,8 +15,25 @@
       </li>
 
     </ul>
-    <a class="glyphicon glyphicon-align-justify pull-right hidden-lg hidden-md hidden-sm"></a>
+    <a class="glyphicon glyphicon-align-justify pull-right hidden-lg hidden-md hidden-sm" ng-click="beers.pushmenu = !beers.pushmenu"></a>
   </div>
+
+  <nav class="slide-menu hidden-lg hidden-md" ng-class="{'pushed-menu': beers.pushmenu}">
+    <span class="glyphicon glyphicon-remove" ng-click="beers.pushmenu = false"></span>
+    <ul>
+        <li>
+          <a href="#/home/beers"><span class="glyphicon glyphicon-home"></span> Home</a>
+        </li>
+        <!--<li>-->
+          <!--<a href="#/users/"><span class="glyphicon glyphicon-user"></span> Profile</a>-->
+        <!--</li>-->
+        <li>
+        <a ng-click="auth.logout()"><span class="glyphicon glyphicon-option-vertical"></span> Logout</a>
+        </li>
+
+      </ul>
+
+  </nav>
 </header>
 
 <!--body of the page-->

@@ -8,12 +8,46 @@
         <li><a href="#">Highest rated</a></li>
         <li><a href="#">Highest quantity</a></li>
       </ul>
-      <ul class="nav nav-sidebar">
-      </ul>
-      <ul class="nav nav-sidebar">
-      </ul>
     </div>
-    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+    <div class="col-sm-9 col-sm-offset-3 col-md-8 col-md-offset-2 main">
+      <div class="row">
+        
+      </div>
+        <div class="panel panel-primary" ng-repeat="beer in beers.index">
+          <div class="panel-heading">
+            <h3 class="panel-title">
+              {{beer.poster.name}}'s
+              <a href="#/home/beers/{{beer.id}}">
+                {{beer.name}}
+              </a>
+            </h3>
+          </div>
+          <div class="panel-body">
+            <div class="row">
+              <div class="container">
+                <div class="col-xs-4 col-sm-3">
+                  <h5>Quantity: </h5>
+                  <p>
+                    {{beer.quantity}}
+                  </p>
+                </div>
+                <div class="col-xs-4 col-sm-3">
+                  <h5>Description: </h5>
+                  <p>
+                    {{beer.description}}
+                  </p>
+                </div>
+                <div class="col-xs-4 col-sm-3">
+                  <h5>Pickup: </h5>
+                  <a href="#">
+                    <i class="fa fa-map-marker"></i> 
+                    Locate this beer
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
     </div>
   </div>
 </div>

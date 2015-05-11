@@ -294,6 +294,53 @@ header{
     background-color: #428bca;
 }
 
+/*
+ * Slide menu
+ *
+ */
+
+.slide-menu{
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  right: 0;
+  top: 0;
+  background-color: #424242;
+  transition: width 0.5s ease;
+  color: #fff;
+  font-size: 1.5em;
+  ul{
+    width: 100%;
+    padding: 0;
+    li{
+      list-style-type: none;
+      width: 100%;
+      margin: 0;
+      padding: 10px 0;
+      text-align: center;
+      &:hover{
+        background-color: #6E6E6E;
+      }
+      a{
+        color: #fff;
+        cursor: pointer;
+      }
+    }
+  }
+  span.glyphicon{
+    cursor: pointer;
+  }
+  .glyphicon-remove{
+    margin: 10px 0 0 220px;
+  }
+}
+
+// Animation for menu
+
+.pushed-menu{
+  width: 250px;
+}
 
 /*
  * Main content
