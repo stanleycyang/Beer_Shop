@@ -4,16 +4,44 @@
     <div class="col-sm-3 col-md-2 sidebar">
       <ul class="nav nav-sidebar">
         <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Beers near me</a></li>
-        <li><a href="#">Highest rated</a></li>
         <li><a href="#">Highest quantity</a></li>
+        <li><a href="#">Alphabetical</a></li>
       </ul>
     </div>
     <div class="col-sm-9 col-sm-offset-3 col-md-8 col-md-offset-2 main">
+
+      <!--POSTING new beers-->
       <div class="row">
-        
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Share your beer</h3>
+          </div>
+          <div class="panel-body">
+            <form name="brew" novalidate>
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-glass"></i></span>
+                  <input type="text" name="name" class="form-control" placeholder="Name of beer" autofocus="true" />
+                </div>
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-sort"></i></span>
+                  <input type="text" class="form-control" name="quantity" placeholder='Quantity of beers'/>
+                </div>
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-map-marker"></i></span>
+                  <input type="text" class="form-control" placeholder="Location" />
+                </div>
+                <div class="form-group">
+                  <textarea class="form-control" placeholder="Add description for beers..."></textarea>
+                </div>
+             <button class="form-control btn-success" type="submit">Post beers</button>
+            </form>
+          </div>
+        </div>
       </div>
-        <div class="panel panel-primary" ng-repeat="beer in beers.index">
+      <hr>
+
+      <!--List of beers-->
+        <div class="panel panel-info row" ng-repeat="beer in beers.index">
           <div class="panel-heading">
             <h3 class="panel-title">
               {{beer.poster.name}}'s
