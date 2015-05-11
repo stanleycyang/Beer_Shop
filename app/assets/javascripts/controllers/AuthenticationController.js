@@ -14,11 +14,7 @@
       };
 
       self.redirectLogin = function(){
-        if(self.isAuthenticated()){
-          $state.go('home');
-        }else{
-          $state.go('login');
-        }
+        (self.isAuthenticated())? $state.go('home') : $state.go('login');
       };
 
       function setAuthenticationToken(token){
@@ -40,6 +36,7 @@
       self.logout = function(){
         // remove the cookie
         $kookies.remove('auth', {path: '/'});
+        self.redirectLogin();
       };
 
     }

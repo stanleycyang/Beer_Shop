@@ -52,7 +52,7 @@
       $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams){
 
         // when not logged in, prevent access to login views
-        if(typeof $kookies.get('auth') === 'undefined' && toState.name === 'home'){
+        if(typeof $kookies.get('auth') === 'undefined' && /home/.test(toState.name)){
             event.preventDefault();
             $state.go('welcome');
         }

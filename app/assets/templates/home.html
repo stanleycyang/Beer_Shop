@@ -1,1 +1,25 @@
-<h1>hello</h1>
+<header class="row" ng-controller="AuthenticationController as auth">
+  <div class="container">
+    <div>
+      <b><a href="#/home" class="navbar-brand"><i class="fa fa-beer"></i> Beer.me</a></b>
+    </div>
+    <ul class="nav navbar-nav navbar-right hidden-xs">
+      <li class="active">
+        <a href="#"><span class="glyphicon glyphicon-home"></span> Home</a>
+      </li>
+      <li>
+        <a href="#"><span class="glyphicon glyphicon-user"></span> Profile</a>
+      </li>
+      <li>
+      <a ng-click="auth.logout()"><span class="glyphicon glyphicon-option-vertical"></span> Logout</a>
+      </li>
+
+    </ul>
+  </div>
+</header>
+
+<!--body of the page-->
+
+<div class="row">
+  
+</div>
