@@ -13,23 +13,33 @@
         return $kookies.get('auth') ? true : false;
       };
 
+      self.redirectLogin = function(){
+        if(self.isAuthenticated()){
+          $state.go('home');
+        }else{
+          $state.go('login');
+        }
+      };
+
       function setAuthenticationToken(token){
         $kookies.set('auth', token, {expires: 7, path: '/'});
       }
 
       self.login = function(){
-        $http.post('http://localhost:3000/api/v1/authenticate', {email: self.email, password: self.password}).success(function(response){
-          //console.log(response.access_token);
+        $http.post('/api/v1/authenticate', {email: self.email, password: self.password}).success(function(response){
           setAuthenticationToken(response.access_token);
-          if(self.isAuthenticated()){
-            $state.go('home');
-          }
-          //console.log(self.isAuthenticated());
-          //console.log($kookies.get('auth'));
+
+          // Log the person in
+          self.redirectLogin();
 
         }).error(function(response){
           console.log(response);
         });
+      };
+
+      self.logout = function(){
+        // remove the cookie
+        $kookies.remove('auth', {path: '/'});
       };
 
     }

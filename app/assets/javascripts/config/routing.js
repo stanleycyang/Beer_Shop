@@ -43,12 +43,25 @@
 
     }
 
-    function run($rootScope, $state){
+    function run($rootScope, $state, $kookies){
       function changeRoute(event, current, previous){
         $rootScope.title = $state.current.title;
       }
 
+
+      $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams){
+        // when logged in, don't go to login / signup pages
+        if($kookies.get('auth') && (toState.name === 'login' || toState.name === 'welcome' || toState.name === 'signup')){
+          event.preventDefault();
+          $state.go('home');
+        }
+
+        // when not logged in, prevent access to login views
+        console.log($kookies.get('auth'));
+      });
+
       $rootScope.$on('$stateChangeSuccess', changeRoute);
+
     }
 
 })();
