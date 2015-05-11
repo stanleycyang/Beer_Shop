@@ -25,6 +25,18 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  # Removes the root node on serializers
+  def default_serializer_options
+    {root: false}
+  end
+
+  # Check the access token before granting access
+  def restrict_access
+    api_key = APIKey.find_by(access_token: params[:access_token])
+    render plain: "You aren't authorized, buster!", status: 401 unless api_key
+  end
+
+  # Residence of our SPA
   def index
   end
 end

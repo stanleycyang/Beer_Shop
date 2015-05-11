@@ -5,6 +5,7 @@ class CreateBeers < ActiveRecord::Migration
       t.integer :quantity
       t.string :location
       t.string :description
+      t.references :user, index: true, foreign_key: true
 
       t.timestamps null: false
     end

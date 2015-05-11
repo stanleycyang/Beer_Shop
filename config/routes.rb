@@ -6,6 +6,8 @@ Rails.application.routes.draw do
       # Token Authentication
       post '/authenticate' => 'authentication#sign_in'
       resources :users, only: [:create, :show]
+      resources :beers, except: [:new, :edit]
+      resources :comments, except: [:new, :edit]
     end
   end
 end

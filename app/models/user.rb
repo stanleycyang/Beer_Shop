@@ -3,6 +3,8 @@ class User < ActiveRecord::Base
   before_create :create_api_key
 
   has_one :api_key, dependent: :destroy
+  has_many :beers, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   validates :name, presence: true
   validates :email, presence: true, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }, uniqueness: {case_sensitive: false}, length: {maximum: 255}
