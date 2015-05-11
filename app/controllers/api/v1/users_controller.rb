@@ -1,6 +1,5 @@
 class API::V1::UsersController < ApplicationController
   respond_to :json, :xml, :html
-  before_action :restrict_access
 
   def show
     respond_with User.find(params[:id])
