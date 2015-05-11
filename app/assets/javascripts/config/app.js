@@ -6,6 +6,7 @@
       'ui.router',
       'ngResource',
       'templates',
+      'monospaced.elastic',
       'ngKookies'
     ]);
 

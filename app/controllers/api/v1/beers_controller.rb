@@ -14,9 +14,8 @@ class API::V1::BeersController < ApplicationController
   end
 
   def create
-    beer = Beer.new(beer_params)
     user = User.find_by_access_token(params[:access_token])
-    beer.user = user
+    beer = user.beers.build(beer_params)
 
     if beer.save
       render json: beer, status: 201
