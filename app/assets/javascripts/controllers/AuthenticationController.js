@@ -14,7 +14,7 @@
       };
 
       self.redirectLogin = function(){
-        (self.isAuthenticated())? $state.go('home') : $state.go('login');
+        (self.isAuthenticated())? $state.go('home.beers') : $state.go('login');
       };
 
       function setAuthenticationToken(token){

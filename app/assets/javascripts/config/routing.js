@@ -17,10 +17,27 @@
 
         .state('home', {
           url: '/home',
-          title: 'Beer.Me',
           templateUrl: 'home.html',
-          controller: 'BeersController',
-          controllerAs: 'beers'
+          abstract: true
+        })
+
+        .state('home.profile', {
+          url: '/users/:userId',
+          views:{
+            'homeContent':{
+              templateUrl: 'user.html'
+            }
+          }
+        })
+
+        .state('home.beers', {
+          url: '/beers',
+          title: 'Beer.Me',
+          views:{
+            'homeContent': {
+              templateUrl: 'beers.html'
+            }
+          }
         })
 
         .state('signup', {
@@ -60,7 +77,7 @@
         // when logged in, don't go to login / signup pages
         if($kookies.get('auth') && (toState.name === 'login' || toState.name === 'welcome' || toState.name === 'signup')){
           event.preventDefault();
-          $state.go('home');
+          $state.go('home.beers');
         }
 
       });

@@ -5,21 +5,20 @@
     </div>
     <ul class="nav navbar-nav navbar-right hidden-xs">
       <li class="active">
-        <a href="#"><span class="glyphicon glyphicon-home"></span> Home</a>
+        <a href="#/home/beers"><span class="glyphicon glyphicon-home"></span> Home</a>
       </li>
-      <li>
-        <a href="#"><span class="glyphicon glyphicon-user"></span> Profile</a>
-      </li>
+      <!--<li>-->
+        <!--<a href="#/users/"><span class="glyphicon glyphicon-user"></span> Profile</a>-->
+      <!--</li>-->
       <li>
       <a ng-click="auth.logout()"><span class="glyphicon glyphicon-option-vertical"></span> Logout</a>
       </li>
 
     </ul>
+    <a class="glyphicon glyphicon-align-justify pull-right hidden-lg hidden-md hidden-sm"></a>
   </div>
 </header>
 
 <!--body of the page-->
-
-<div class="row">
-  
+<div ui-view="homeContent">
 </div>
