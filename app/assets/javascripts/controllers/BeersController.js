@@ -10,6 +10,8 @@
       // Capture variable
       var self = this;
 
+      self.order = '-created_at';
+
       // Use Resource to perform CRUD
       var BeerResources = new Resources('beers');
 

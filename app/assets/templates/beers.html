@@ -3,9 +3,9 @@
   <div class="row">
     <div class="col-sm-3 col-md-2 sidebar">
       <ul class="nav nav-sidebar">
-        <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Highest quantity</a></li>
-        <li><a href="#">Alphabetical</a></li>
+        <li class="active"><a ng-click="beers.order = '-created_at'">Overview <span class="sr-only">(current)</span></a></li>
+        <li><a ng-click="beers.order = '-quantity'">Highest quantity</a></li>
+        <li><a ng-click="beers.order = 'name'">Alphabetical</a></li>
       </ul>
     </div>
     <div class="col-sm-9 col-sm-offset-3 col-md-8 col-md-offset-2 main">
@@ -58,7 +58,7 @@
       <hr>
 
       <!--List of beers-->
-        <div class="panel panel-info row" ng-repeat="beer in beers.index">
+        <div class="panel panel-info row" ng-repeat="beer in beers.index | orderBy: beers.order">
           <div class="panel-heading">
             <h3 class="panel-title">
               {{beer.poster.name}}'s
