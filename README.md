@@ -130,7 +130,7 @@ Remove turbolinks references
 Generate models
 
 	$ rails g model user name email password_digest
-	$ rails g model beer name description user:references
+	$ rails g model beer name description quantity:integer location user:references
 	$ rails g model APIKey access_token user:references
 
 Then rake it
