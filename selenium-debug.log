@@ -1,0 +1,50 @@
+22:34:22.292 INFO - Launching a standalone server
+22:34:22.352 INFO - Java: Oracle Corporation 25.31-b07
+22:34:22.353 INFO - OS: Mac OS X 10.10.1 x86_64
+22:34:22.368 INFO - v2.45.0, with Core v2.45.0. Built from revision 5017cb8
+22:34:22.503 INFO - Default driver org.openqa.selenium.ie.InternetExplorerDriver registration is skipped: registration capabilities Capabilities [{ensureCleanSession=true, browserName=internet explorer, version=, platform=WINDOWS}] does not match with current platform: MAC
+22:34:22.564 INFO - RemoteWebDriver instances should connect to: http://127.0.0.1:4444/wd/hub
+22:34:22.568 INFO - Version Jetty/5.1.x
+22:34:22.570 INFO - Started HttpContext[/selenium-server,/selenium-server]
+22:34:22.637 INFO - Started org.openqa.jetty.jetty.servlet.ServletHandler@16c0663d
+22:34:22.637 INFO - Started HttpContext[/wd,/wd]
+22:34:22.637 INFO - Started HttpContext[/selenium-server/driver,/selenium-server/driver]
+22:34:22.637 INFO - Started HttpContext[/,/]
+22:34:22.642 INFO - Started SocketListener on 0.0.0.0:4444
+22:34:22.642 INFO - Started org.openqa.jetty.jetty.Server@30dae81
+22:34:23.059 INFO - Executing: [new session: Capabilities [{acceptSslCerts=true, name=Demotest, browserName=firefox, javascriptEnabled=true, platform=ANY}]])
+22:34:23.075 INFO - Creating a new session for Capabilities [{acceptSslCerts=true, name=Demotest, browserName=firefox, javascriptEnabled=true, platform=ANY}]
+22:34:32.461 INFO - Done: [new session: Capabilities [{acceptSslCerts=true, name=Demotest, browserName=firefox, javascriptEnabled=true, platform=ANY}]]
+22:34:32.507 INFO - Executing: [get: http://localhost:3000])
+22:34:34.069 INFO - Done: [get: http://localhost:3000]
+22:34:34.088 INFO - Executing: [find elements: By.cssSelector: a.home])
+22:34:34.382 INFO - Done: [find elements: By.cssSelector: a.home]
+22:34:34.405 INFO - Executing: [is displayed: 0 [[FirefoxDriver: firefox on MAC (08c8a55a-31ca-8540-8e5e-46ba1cda139c)] -> css selector: a.home]])
+22:34:34.548 INFO - Done: [is displayed: 0 [[FirefoxDriver: firefox on MAC (08c8a55a-31ca-8540-8e5e-46ba1cda139c)] -> css selector: a.home]]
+22:34:34.567 INFO - Executing: [find element: By.cssSelector: a.home[ui-sref=login]])
+22:34:34.648 INFO - Done: [find element: By.cssSelector: a.home[ui-sref=login]]
+22:34:34.656 INFO - Executing: [click: 1 [[FirefoxDriver: firefox on MAC (08c8a55a-31ca-8540-8e5e-46ba1cda139c)] -> css selector: a.home]])
+22:34:35.027 INFO - Done: [click: 1 [[FirefoxDriver: firefox on MAC (08c8a55a-31ca-8540-8e5e-46ba1cda139c)] -> css selector: a.home]]
+22:34:36.039 INFO - Executing: [find element: By.cssSelector: .main-content])
+22:34:36.056 INFO - Done: [find element: By.cssSelector: .main-content]
+22:34:36.062 INFO - Executing: [get text: 3 [[FirefoxDriver: firefox on MAC (08c8a55a-31ca-8540-8e5e-46ba1cda139c)] -> css selector: .main-content]])
+22:34:36.213 INFO - Done: [get text: 3 [[FirefoxDriver: firefox on MAC (08c8a55a-31ca-8540-8e5e-46ba1cda139c)] -> css selector: .main-content]]
+22:34:36.221 INFO - Executing: [find element: By.cssSelector: input[name=email]])
+22:34:36.285 INFO - Done: [find element: By.cssSelector: input[name=email]]
+22:34:36.295 INFO - Executing: [send keys: 4 [[FirefoxDriver: firefox on MAC (08c8a55a-31ca-8540-8e5e-46ba1cda139c)] -> css selector: input[name=email]], [r, o, b, @, r, o, b, ., c, o, m]])
+22:34:36.614 INFO - Done: [send keys: 4 [[FirefoxDriver: firefox on MAC (08c8a55a-31ca-8540-8e5e-46ba1cda139c)] -> css selector: input[name=email]], [r, o, b, @, r, o, b, ., c, o, m]]
+22:34:36.621 INFO - Executing: [find element: By.cssSelector: input[name=password]])
+22:34:36.799 INFO - Done: [find element: By.cssSelector: input[name=password]]
+22:34:36.806 INFO - Executing: [send keys: 5 [[FirefoxDriver: firefox on MAC (08c8a55a-31ca-8540-8e5e-46ba1cda139c)] -> css selector: input[name=password]], [r, o, b, r, o, b]])
+22:34:37.014 INFO - Done: [send keys: 5 [[FirefoxDriver: firefox on MAC (08c8a55a-31ca-8540-8e5e-46ba1cda139c)] -> css selector: input[name=password]], [r, o, b, r, o, b]]
+22:34:37.022 INFO - Executing: [find element: By.cssSelector: button[type=submit]])
+22:34:37.116 INFO - Done: [find element: By.cssSelector: button[type=submit]]
+22:34:37.122 INFO - Executing: [click: 6 [[FirefoxDriver: firefox on MAC (08c8a55a-31ca-8540-8e5e-46ba1cda139c)] -> css selector: button[type=submit]]])
+22:34:37.334 INFO - Done: [click: 6 [[FirefoxDriver: firefox on MAC (08c8a55a-31ca-8540-8e5e-46ba1cda139c)] -> css selector: button[type=submit]]]
+22:34:38.348 INFO - Executing: [find element: By.cssSelector: body])
+22:34:38.362 INFO - Done: [find element: By.cssSelector: body]
+22:34:38.385 INFO - Executing: [get text: 7 [[FirefoxDriver: firefox on MAC (08c8a55a-31ca-8540-8e5e-46ba1cda139c)] -> css selector: body]])
+22:34:38.675 INFO - Done: [get text: 7 [[FirefoxDriver: firefox on MAC (08c8a55a-31ca-8540-8e5e-46ba1cda139c)] -> css selector: body]]
+22:34:38.684 INFO - Executing: [delete session: 7d13585d-729b-495a-8afa-d8fdf6841577])
+22:34:38.921 INFO - Done: [delete session: 7d13585d-729b-495a-8afa-d8fdf6841577]
+22:34:38.994 INFO - Shutting down...

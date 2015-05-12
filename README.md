@@ -152,6 +152,13 @@ Add it to your `application.html.erb`
 
 Create 
 
+###Running tests!
+
+```
+$ sudp npm install nightwatch
+$ nightwatch --test tests/logintest.js
+```
+
 
 
 	
