@@ -350,13 +350,6 @@ In `routing.js`
 	
 	    function config($stateProvider, $urlRouterProvider){
 	      $stateProvider
-	        .state('welcome', {
-	          url: '/',
-	          title: 'Beer.Me',
-	          templateUrl: 'welcome.html',
-	          controller: 'UsersController',
-	          controllerAs: 'users'
-	        })
 	
 	        .state('home', {
 	          url: '/home',
