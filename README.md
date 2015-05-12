@@ -1,4 +1,4 @@
-#Rails + Angular Pt. I
+#Rails + Angular
 
 **Goal**: Set up angular, client-side routing, and token authentication, serializers, APIs
 
