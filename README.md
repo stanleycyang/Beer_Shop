@@ -155,7 +155,7 @@ Create
 ###Running tests!
 
 ```
-$ sudp npm install nightwatch
+$ sudp npm install -g nightwatch
 $ nightwatch --test tests/logintest.js
 ```
 
