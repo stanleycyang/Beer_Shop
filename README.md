@@ -293,7 +293,6 @@ To create users, let's make an API for it as well. In `application/controller/ap
 
 In your assets, create a templates folder to store your states `app/assets/templates`
 
-	welcome.html
 	signup.html
 	register.html 
 	home.html (Where our login states reside)
