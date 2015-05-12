@@ -44,6 +44,7 @@ Start the db
 	gem 'autoprefixer-rails'
 	gem 'bcrypt', '~> 3.1.7'
 	gem "font-awesome-rails"
+	gem 'bootstrap-sass'
 	gem 'responders', '~> 2.0'
 	
 	group :development, :test do
