@@ -560,6 +560,26 @@ Create a file called `resources.js` in `factories`. Then add:
 	
 	})();
 
+###Keep logged in
+
+Add this block of code within the run function in `routing.js`
+
+	$rootScope.$on('$stateChangeStart', function(event,  toState, toParams, fromState, fromParams){
+
+        // when not logged in, prevent access to login     views
+        if(typeof $kookies.get('auth') === 'undefined' && /home/.test(toState.name)){
+            event.preventDefault();
+            $state.go('welcome');
+        }
+
+        // when logged in, don't go to login / signup pages
+        if($kookies.get('auth') && (toState.name ===       'login' || toState.name === 'welcome' || toState.name ===  'signup')){
+          event.preventDefault();
+          $state.go('home');
+        }
+
+      });
+
 
 ###You should be able to login using authentication token!
 
