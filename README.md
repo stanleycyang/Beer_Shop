@@ -133,6 +133,11 @@ Generate models
 	$ rails g model beer name description quantity:integer location user:references
 	$ rails g model APIKey access_token user:references
 
+Generate Serializers
+
+	$ rails g serializer beer
+	$ rails g serializer user
+
 Then rake it
 
 	$ rake db:migrate
@@ -291,6 +296,13 @@ To create users, let's make an API for it as well. In `application/controller/ap
 	    end
 	
 	end
+
+In your UserSerializer
+
+	class UserSerializer < ActiveModel::Serializer
+	  attributes :id, :name
+	end
+
 
 In your assets, create a templates folder to store your states `app/assets/templates`
 
@@ -550,6 +562,60 @@ Create a file called `resources.js` in `factories`. Then add:
 
 
 ###You should be able to login using authentication token!
+
+Build `BeersController`
+
+	class API::V1::BeersController < ApplicationController
+	  protect_from_forgery with: :null_session
+	
+	  before_action :restrict_access
+	
+	  respond_to :json, :xml, :json
+	
+	  def index
+	    respond_with Beer.all
+	  end
+	
+	  def show
+	    respond_with Beer.find(params[:id])
+	  end
+	
+	  def create
+	    user = User.find_by_access_token(params[:access_token])
+	    beer = user.beers.build(beer_params)
+	
+	    if beer.save
+	      render json: beer, status: 201
+	    else
+	      render json: {errors: beer.errors}, status: 422
+	    end
+	  end
+	
+	  def update
+	    beer = Beer.find(params[:id])
+	    if beer.update(beer_params)
+	      render json: beer, status: 200
+	    else
+	      render json: {errors: beer.errors}, status: 422
+	    end
+	  end
+	
+	  private
+	    def beer_params
+	      params.require(:beer).permit(:name, :quantity, :location, :description, :user_id, :access_token)
+	    end
+	end
+
+Build `BeerSerializers
+
+	class BeerSerializer < ActiveModel::Serializer
+	  attributes :id, :name, :quantity, :location, :description, :poster, :created_at
+	
+	  def poster
+	    return {id: object.user.id, name: object.user.name}
+	  end
+	end
+
 
 In `home.html`
 
